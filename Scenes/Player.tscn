@@ -12,6 +12,15 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="Spatial" type="Spatial" parent="."]
+[node name="Rotation_Helper" type="Spatial" parent="."]
 
-[node name="Camera" type="Camera" parent="."]
+[node name="Model" type="Spatial" parent="Rotation_Helper"]
+
+[node name="Camera" type="Camera" parent="Rotation_Helper"]
+
+[node name="HUD" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
