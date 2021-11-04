@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="Ground Tile" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0162086, 12.9688, -0.218248 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.7362, 0 )
+use_collision = true
+width = 50.0
+height = 0.5
+depth = 50.0

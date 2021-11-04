@@ -1,8 +1,0 @@
-[gd_scene format=2]
-
-[node name="Tree" type="Spatial"]
-
-[node name="CSGBox" type="CSGBox" parent="."]
-height = 4.59043
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]

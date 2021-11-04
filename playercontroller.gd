@@ -8,6 +8,7 @@ const ACCEL = 4.5
 const invert_Y_Axis = false #Figure out how to save this data for later
 var invert = -1
 
+
 var dir = Vector3()
 
 const DEACCEL= 16
@@ -16,7 +17,7 @@ const MAX_SLOPE_ANGLE = 40
 var camera
 var rotation_helper
 
-var MOUSE_SENSITIVITY = 0.05
+var MOUSE_SENSITIVITY = 0.1
 
 func _ready():
 	camera = $Rotation_Helper/Camera
