@@ -5,6 +5,8 @@ var vel = Vector3()
 const MAX_SPEED = 20
 const JUMP_SPEED = 18
 const ACCEL = 4.5
+const invert_Y_Axis = false #Figure out how to save this data for later
+var invert = -1
 
 var dir = Vector3()
 
@@ -19,14 +21,16 @@ var MOUSE_SENSITIVITY = 0.05
 func _ready():
 	camera = $Rotation_Helper/Camera
 	rotation_helper = $Rotation_Helper
-
+	if(invert_Y_Axis):
+		invert = 1
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
 	process_input(delta)
 	process_movement(delta)
 
-func process_input(delta):
+func process_input(_delta):
 
 	# ----------------------------------
 	# Walking
@@ -91,8 +95,9 @@ func process_movement(delta):
 	vel = move_and_slide(vel, Vector3(0, 1, 0), 0.05, 4, deg2rad(MAX_SLOPE_ANGLE))
 
 func _input(event):
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		rotation_helper.rotate_x(deg2rad(event.relative.y * MOUSE_SENSITIVITY))
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:		
+		
+		rotation_helper.rotate_x(deg2rad(event.relative.y * MOUSE_SENSITIVITY * invert))
 		self.rotate_y(deg2rad(event.relative.x * MOUSE_SENSITIVITY * -1))
 
 		var camera_rot = rotation_helper.rotation_degrees
