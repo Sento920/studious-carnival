@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/pylon1.glb" type="PackedScene" id=1]
+
+[sub_resource type="BoxShape" id=1]
+
+[node name="pylon1" instance=ExtResource( 1 )]
+
+[node name="StaticBody" type="StaticBody" parent="." index="3"]
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="1"]
+transform = Transform( 1, 0, 0, 0, 10, 0, 0, 0, 1, 14.7639, -20.0083, 14.3949 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="StaticBody" index="2"]
+transform = Transform( 1, 0, 0, 0, 10, 0, 0, 0, 1, -14.8906, -20.0083, 14.3949 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="StaticBody" index="3"]
+transform = Transform( 1, 0, 0, 0, 10, 0, 0, 0, 1, 14.7639, -20.0083, -14.8829 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="StaticBody" index="4"]
+transform = Transform( 1, 0, 0, 0, 10, 0, 0, 0, 1, -14.653, -20.0083, -14.6472 )
+shape = SubResource( 1 )

@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Tree2test.glb" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Ground Tile.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/tree3test.glb" type="PackedScene" id=5]
-[ext_resource path="res://Assets/pylon1.glb" type="PackedScene" id=6]
+[ext_resource path="res://Assets/pylon1.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CylinderShape" id=1]
 radius = 1.7
@@ -17,6 +17,7 @@ height = 10.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.158, 5, -0.94 )
 
 [node name="Ground Tile" parent="." instance=ExtResource( 4 )]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.0162086, 12.9688, -0.218248 )
 
 [node name="Tree1Test" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1433, -0.4305, 0 )
@@ -51,6 +52,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.801, -0.143701, -18.7143 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0269794, 4.75687, -0.0579281 )
 shape = SubResource( 1 )
 
+[node name="pylon1" parent="Tree1Test2/StaticBody/CollisionShape" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.485, 23.7536, -43.5507 )
+
 [node name="tree3test" parent="." instance=ExtResource( 5 )]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -17.2014, 0, 17.2268 )
 
@@ -61,6 +65,3 @@ transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -17.2014, 0, 17.2268 )
 [node name="CollisionShape" type="CollisionShape" parent="tree3test/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0256057, 4.83987, -0.0579281 )
 shape = SubResource( 1 )
-
-[node name="pylon1" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 14.154, -8.82145 )
